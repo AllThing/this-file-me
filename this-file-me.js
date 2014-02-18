@@ -49,7 +49,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
     Meteor.methods({
         addHash : function (hash, upsets, pleases) {
-            var re = /[a-fA-F0-9]{64}/;
+            var re = /^[a-fA-F0-9]{64}$/;
 
             // ignore non-sha256 strings.
             if (!re.test(hash)) {
