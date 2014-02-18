@@ -1,0 +1,80 @@
+<head>
+    <title>this file (upsets|pleases) me ...</title>
+</head>
+
+<template name="home">
+    <body> <div id="outer"> <!-- we live in a world of divs. -->
+        <h1><a href="/">this file (upsets|pleases) me ...</a></h1>
+        <hr />
+        {{> submit_hash }}
+        <hr />
+        <h2>most upsetting files</h2>
+        {{> upsets_leaderboard }}
+        <hr />
+        <h2>most pleasing files</h2>
+        {{> pleases_leaderboard }}
+        <hr />
+        <p>to calculate a sha256 hash for a file named <span class="literal">foo</span> on linux</p>
+        <pre>sha256sum foo</pre>
+        <hr />
+        <small>source: <a href="https://github.com/silky/this-file-me/">this-file-me</a>.</small>
+    </div> </body>
+</template>
+
+<template name="hash_view">
+    <body> <div id="outer"> <!-- we live in a world of divs. -->
+        <h1><a href="/">this file (upsets|pleases) me ...</a></h1>
+        <hr />
+        <h2 class="hash">{{file_hash}}</h3>
+        <hr />
+        <h3><span class="upsets">{{upsets}}</span> people are upset by this file.</h3>
+        <h3><span class="pleases">{{pleases}}</span> people are pleased by this file.</h3>
+        <hr />
+        <small>source: <a href="https://github.com/silky/this-file-me/">this-file-me</a>.</small>
+    </div> </body>
+</template>
+
+<template name="submit_hash">
+    <h2>submit your feelings on a file</h2>
+    <p>the file with sha256 hash</p>
+    <input type="text" class="hash" name="hash" />
+    <p>
+        <input type="button" id="upsets" name="upsets" value="upsets me" />
+        <input type="button" id="pleases" name="pleases" value="pleases me" />
+    </p>
+</template>
+
+<template name="upsets_leaderboard">
+    <table class="leaderboard">
+    <tr>
+        <th>sha256 hash</th>
+        <th>upsets</th>
+        <th>pleases</th>
+    </tr>
+    {{#each hashes}}
+      {{> hash}}
+    {{/each}}
+    </table>
+    </template>
+
+<template name="pleases_leaderboard">
+    <table class="leaderboard">
+    <tr>
+        <th>sha256 hash</th>
+        <th>upsets</th>
+        <th>pleases</th>
+    </tr>
+    {{#each hashes}}
+      {{> hash}}
+    {{/each}}
+    </table>
+</template>
+
+<template name="hash">
+    <tr>
+        <td class="hash"><a href="file/{{hash}}">{{hash}}</a></td>
+        <td class="upsets">{{upsets}}</td>
+        <td class="pleases">{{pleases}}</td>
+    </tr>
+</template>
+

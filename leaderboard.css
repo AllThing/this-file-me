@@ -1,0 +1,106 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    margin: 50px 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+h1 {
+}
+
+pre, span.literal { 
+    background: #eaeaea;
+    font-family: "Courier New";
+    padding: 3px;
+}
+
+h2 { color: gray } 
+
+#outer {
+    width: 800px;
+    margin: 0 auto;    
+}
+
+input.hash {
+    width: 520px;
+    font-size: 0.8em;
+    padding: 2px;
+    font-family: "Courier New";
+}
+
+input[type="button"] {
+    padding: 5px;
+    cursor: pointer;
+}
+
+a { color: black; }
+a:hover { 
+    background: black;
+    color: white;
+}
+
+span.upsets {
+    background: gold;
+    padding: 3px;
+}
+span.pleases {
+    background: magenta;
+    padding: 3px;
+}
+
+#pleases {
+    background: magenta;
+}
+
+#upsets {
+    background: gold;
+}
+
+table.leaderboard th {
+    border-bottom: solid 1px #eaeaea;
+}
+
+table.leaderboard td.hash {
+    padding: 5px;
+    font-family: "Courier New";
+    font-size: 0.9em;
+}
+
+table.leaderboard td.upsets {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: gold;
+}
+
+
+table.leaderboard td.pleases {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: magenta;
+}
+
+
+.details, .none {
+    font-weight: bold;
+    font-size: 2em;
+    border-style: dashed none none none;
+    border-color: #ccc;
+    border-width: 4px;
+    margin: 50px 10px;
+    padding: 10px 0px;
+}
+
+.none {
+    color: #777;
+}
+
+.inc {
+  cursor: pointer;
+}
